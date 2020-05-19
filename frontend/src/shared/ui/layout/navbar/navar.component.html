@@ -1,0 +1,28 @@
+<nav class="">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <a [routerLink]="['/']">
+          <img class="img-fluid" [src]="logoUrl" />
+        </a>
+      </div>
+      <div class="search">
+        <form
+          class="form-inline"
+          [formGroup]="searchForm"
+          (submit)="onSearch()"
+        >
+          <input
+            formControlName="term"
+            type="text"
+            class="form-control"
+            placeholder="Search movies"
+          />
+          <button type="submit" class="ml-2 btn btn-primary">
+            <span class="oi" data-glyph="magnifying-glass"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>

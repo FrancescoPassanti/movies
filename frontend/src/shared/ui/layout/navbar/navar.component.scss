@@ -1,0 +1,21 @@
+@import 'styles';
+
+nav {
+  background-color: $light;
+  border-bottom: 1px solid $dark;
+  .logo {
+    img {
+      max-width: 70px;
+    }
+  }
+  .search {
+    form {
+      input {
+        max-width: 170px;
+        @include media-breakpoint-up(sm) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

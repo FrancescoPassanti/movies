@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <ng-container *ngIf="genre">
+    Filter by genre: <b>{{ genre }}</b>
+    <a routerLink="/movies" class="ml-2 badge badge-primary">Remove</a>
+  </ng-container>
+  <ng-container *ngIf="term">
+    Filter by term: <b>{{ term }}</b>
+    <a routerLink="/movies" class="ml-2 badge badge-primary">Remove</a>
+  </ng-container>
+  <ng-container *ngIf="movies$ | async">
+    <app-movie-grid [movies]="movies$ | async"></app-movie-grid>
+  </ng-container>
+</div>

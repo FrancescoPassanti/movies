@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  frontend:
+    container_name: movies_frontend
+    depends_on: 
+        - api
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+        - 8080:80
+  api:
+    container_name: movies_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile    
+    ports:
+        - 3000:3000        

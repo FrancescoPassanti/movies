@@ -1,0 +1,41 @@
+<div class="container">
+  <ng-container *ngIf="movie">
+    <div class="mt-2">
+      <a role="button" (click)="onGoBack()"
+        ><span class="oi" data-glyph="arrow-circle-left"></span> Return back</a
+      >
+    </div>
+    <div class="media mt-4 mb-4">
+      <div class="bg-light media-img">
+        <img class="mr-sm-3" [src]="movie.img" alt="{{ movie.name }}" />
+      </div>
+      <div class="media-body">
+        <h1 class="mt-0">{{ movie.name }}</h1>
+        <ul class="list-inline">
+          <li class="list-inline-item">{{ movie.length }}</li>
+          <li class="list-inline-item">Rate: {{ movie.rate }}</li>
+        </ul>
+        <p class="lead">{{ movie.description }}</p>
+        <div class="genres">
+          <a
+            *ngFor="let genre of movie.genres"
+            [routerLink]="['/movies']"
+            [queryParams]="{ genre: genre }"
+          >
+            <span class="badge badge-primary mr-1">{{ genre }}</span></a
+          >
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+    <ng-container *ngIf="movie.genres">
+      <div class="mt-4" *ngFor="let genre of movie.genres">
+        <h4 class="mb-4 text-center text-uppercase">MORE {{ genre }} MOVIES</h4>
+        <app-genre-movies [genre]="genre"></app-genre-movies>
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="showNotFound">
+    <app-not-found></app-not-found
+  ></ng-container>
+</div>

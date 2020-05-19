@@ -1,0 +1,15 @@
+@import 'styles';
+
+.media {
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    display: flex;
+  }
+}
+.media-img {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

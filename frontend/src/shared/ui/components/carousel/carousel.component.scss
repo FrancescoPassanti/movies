@@ -1,0 +1,19 @@
+.cover {
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.carousel-caption {
+  width: 100%;
+  background: #0000006b;
+  height: 100%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 50px;
+  z-index: 1;
+}

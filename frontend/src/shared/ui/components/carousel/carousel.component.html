@@ -1,0 +1,16 @@
+<ngb-carousel *ngIf="movies">
+  <ng-template ngbSlide *ngFor="let movie of movies">
+    <div
+      class="cover"
+      [ngStyle]="{ 'background-image': 'url(' + movie.banner + ')' }"
+    ></div>
+    <div class="carousel-caption">
+      <a
+        class="btn btn-outline-primary"
+        role="button"
+        [routerLink]="['/movies', movie.key]"
+        >More details</a
+      >
+    </div>
+  </ng-template>
+</ngb-carousel>

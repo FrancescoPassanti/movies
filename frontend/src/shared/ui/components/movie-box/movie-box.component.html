@@ -1,0 +1,28 @@
+<div class="card" *ngIf="movie">
+  <a [routerLink]="['/movies', movie.key]">
+    <img class="card-img-top" [src]="movie.img" alt="{{ movie.name }}" />
+  </a>
+  <div class="card-body">
+    <ul class="list-inline">
+      <li class="list-inline-item">{{ movie.length }}</li>
+      <li class="list-inline-item">Rate: {{ movie.rate }}</li>
+    </ul>
+    <h5 class="card-title">
+      <a [routerLink]="['/movies', movie.key]">{{ movie.name }}</a>
+    </h5>
+    <p class="card-text">
+      <a [routerLink]="['/movies', movie.key]"
+        >{{ movie.description | slice: 0:80 }}...</a
+      >
+    </p>
+    <div class="genres">
+      <a
+        *ngFor="let genre of movie.genres"
+        [routerLink]="['/movies']"
+        [queryParams]="{ genre: genre }"
+      >
+        <span class="badge badge-primary mr-1">{{ genre }}</span></a
+      >
+    </div>
+  </div>
+</div>

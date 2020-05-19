@@ -1,0 +1,8 @@
+<ng-container *ngIf="movies$ | async">
+  <app-movie-grid [movies]="movies$ | async"></app-movie-grid>
+  <div class="text-center mt-4" *ngIf="showAllMoviesButton">
+    <a role="button" [routerLink]="['/movies']" class="btn btn-primary"
+      >Show all movies</a
+    >
+  </div>
+</ng-container>
