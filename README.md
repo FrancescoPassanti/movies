@@ -1,4 +1,4 @@
-# Betsson Group: Movies Application
+# Movies Application
 - Author: Francesco Passanti
 - Release date: 18 May 2020
 
